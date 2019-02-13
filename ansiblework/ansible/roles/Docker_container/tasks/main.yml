@@ -1,0 +1,7 @@
+
+ - template:
+     src: Dockerfile
+     dest: /etc/Dockerfile
+     mode: 0644
+     owner: root
+     group: root

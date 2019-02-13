@@ -1,0 +1,45 @@
+
+- name: "loop through list"
+  debug:
+    msg: "An item: {{item}}"
+  with_items:
+    - 1
+    - 2
+    - 3
+
+- name: "loop through list from a variable"
+  debug:
+    msg: "An item: {{item}}"
+  with_items: "{{ somelist, shubham, version }}"
+
+- name: install git
+  apt:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - git
+
+- name: "value of shubham"
+  debug:
+    msg: "An item: {{ shubham }}"
+
+# - set_fact: 
+#     shubham: "11"
+
+- name: conditional loop example
+  debug:
+    msg: "Entered inside loop : {{ item }}"
+  with_items:
+    - 74
+    - 54
+    - 23
+    - 13
+    - 11
+  when: item == {{ shubham }}
+
+
+     
+- name: conditional loop of numbers
+  command: echo {{ item }}
+  loop: [ 2,4,6,8,10,12 ]
+  when: item > 5

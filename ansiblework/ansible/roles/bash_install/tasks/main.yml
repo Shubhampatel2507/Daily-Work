@@ -1,0 +1,20 @@
+ 
+ - name: Run Command
+   command: echo "Helloworld - {{version}} {{shubham}}"
+
+ - template:
+     src: apache2/apache2.conf.j2
+     dest: /etc/apache2/apache2.conf
+     mode: 0644
+     owner: root
+     group: root
+
+ - name: copy file
+   copy:
+     src: apache2.conf.txt
+     dest: /etc/apache2.conf.txt
+     mode: 0644
+     owner: root
+     group: root
+
+  

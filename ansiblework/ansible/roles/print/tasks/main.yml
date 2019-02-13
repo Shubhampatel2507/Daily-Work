@@ -1,0 +1,6 @@
+
+- name: Create a file '/home/system/Documents/Shubham_workspace/ansiblework/ansible/roles/print/tasks/helloworld.txt' with content 'hello world'
+  copy:
+     content: "hello world\n"
+     dest: /home/system/Documents/Shubham_workspace/ansiblework/ansible/roles/helloworld.txt
+
