@@ -1,0 +1,20 @@
+# shubham: 23
+
+# Used only for Debian/Ubuntu. Switch 'stable' to 'edge' if needed.
+docker_apt_release_channel: stable
+docker_apt_arch: amd64
+docker_apt_repository: "deb [arch={{ docker_apt_arch }}] https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }}"
+docker_apt_ignore_key_error: true
+
+# Edition can be one of: 'ce' (Community Edition) or 'ee' (Enterprise Edition).
+docker_edition: 'ce'
+docker_package: "docker-{{ docker_edition }}"
+docker_package_state: present
+docker_versions: 1.6.9
+docker_value: 'Dockerfile'
+docker_image_name: base_lamp
+docker_repository_name: shubham2507
+docker_login_username: shubham2507
+docker_login_password: pass1234
+docker_shell: docker run -dp 8080:80 lamp:latest
+

@@ -1,0 +1,12 @@
+
+- hosts: localhost
+  become: yes
+  roles:
+    # - lampinst
+    # - print
+    # - bash_install
+    # - loop
+    # - Docker
+    # - Docker_container
+    # - java
+    - docker_lamp_image

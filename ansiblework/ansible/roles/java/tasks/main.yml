@@ -1,0 +1,23 @@
+
+- template:
+     src: Dockerfile
+     dest: /etc/java_Dockerfile
+     mode: 0644
+     owner: root
+     group: root
+
+# build docker image
+- name: build Dockerfile
+  docker_image: 
+    name=java_app
+    path=/etc/
+    tag=latest 
+    state=present
+
+# run image 
+- name: running container
+  docker_container:
+    name=java_app
+    image=java_app
+    state=started
+
